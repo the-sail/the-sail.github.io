@@ -58,9 +58,13 @@
         h1 { font-size: 2.5em; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 10px; }
         h2 { font-size: 1.6em; font-weight: 700; margin-bottom: 1.2em; color: #111; border-bottom: 1px solid #eee; padding-bottom: 8px; }
         
-        .sub-text { color: #666; font-size: 1.1em; margin-bottom: 30px; }
+        .sub-text { color: #666; font-size: 1.1em; margin-bottom: 30px; text-align: justify; text-justify: inter-word; line-height: 1.7; }
         a { color: #0070f3; text-decoration: none; }
         a:hover { text-decoration: underline; }
+
+        @media (max-width: 700px) {
+            .sub-text {text-align: left;}
+        }
 
         .tagline {
             font-size: 1em;
@@ -105,10 +109,14 @@
         <h1>SAIL</h1>
         <p class="tagline">Scalable Artificial Intelligence Laboratory</p>
         <p class="sub-text">
-            <b>Yong-Hyuk Moon</b> is an Assistant Professor of Computer Engineering at Sungshin Women's University.
-            Our mission is to push the boundaries of task-agnostic models toward self-evolving AI through research on
-            reasoning trajectories, efficient architectures, model optimization and compression, and on-device adaptation.
+            <b>Yong-Hyuk Moon</b> is an Assistant Professor of Computer Engineering at Sungshin Women's University. Our mission is to push the boundaries of task-agnostic models toward self-evolving AI through research on reasoning trajectories, efficient architectures, model optimization and compression, and on-device adaptation.
         </p>
+        <!--
+        <p class="sub-text">
+            <b>Yong-Hyuk Moon</b> is an Assistant Professor of Computer Engineering at Sungshin Women's University, leading research that pushes the boundaries of task-agnostic models toward self-evolving AI, with a focus on reasoning trajectories, efficient architectures, model optimization and compression, and on-device adaptation.
+        </p>
+        -->
+        
         <div style="font-size: 0.95em;">
             <a href="mailto:email@sungshin.ac.kr">Email</a> / 
             <a href="#" target="_blank">Google Scholar</a> / 
@@ -248,7 +256,7 @@
         <div class="item">
             <span class="item-title">A Carbon-Efficient Framework for Deep Learning Workloads on GPU Clusters</span>
             <span class="item-meta">
-                Dong-ki Kang, <b>Yong-Hyuk Moon*</b> <br>
+                Dong-Ki Kang, <b>Yong-Hyuk Moon*</b> <br>
                 <i>Applied Sciences</i> <span class="tag">Efficient AI Systems</span>
                 [<a href="#">Paper</a>] [<a href="#">Project</a>]
             </span>
