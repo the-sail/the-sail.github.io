@@ -1,1 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The SAIL | Scalable AI & Self-Evolving Computing</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px 100px 20px;
+            background-color: #fff;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 16px 0;
+            border-bottom: 1px solid #f0f0f0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 20px;
+            backdrop-filter: blur(6px);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #666;
+            font-size: 0.95em;
+            font-weight: 500;
+            line-height: 1.1;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+        .nav-slogan {
+            margin-left: auto;
+            font-size: 0.78em;
+            color: #999;
+            font-style: italic;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            line-height: 1.1;
+        }
+
+        /* Section layout */
+        section {
+            scroll-margin-top: 88px;
+            padding-top: 22px;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 0.9em;
+            color: #111;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 1em;
+            color: #777;
+            margin-top: 0;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .sub-text {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 24px;
+            text-align: justify;
+            text-justify: inter-word;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #0070f3;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Item detail */
+        .item {
+            margin-bottom: 18px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            display: block;
+            color: #111;
+            font-size: 1.05em;
+        }
+
+        .item-meta {
+            font-size: 0.92em;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f3f3f3;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.82em;
+            margin-left: 5px;
+            margin-top: 6px;
+            vertical-align: middle;
+        }
+
+        /* People / Photo grid */
+        .people-grid,
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 25px;
+        }
+
+        .person-name {
+            font-weight: 600;
+            display: block;
+        }
+
+        .person-role {
+            font-size: 0.88em;
+            color: #888;
+        }
+
+        .photo-card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fafafa;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            display: block;
+            background: #f2f2f2;
+        }
+
+        .photo-caption {
+            padding: 10px 12px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        footer {
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.85em;
+            color: #999;
+        }
+
+        @media (max-width: 700px) {
+            .sub-text {
+                text-align: left;
+            }
+
+            nav {
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .nav-slogan {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            nav {
+                gap: 14px;
+            }
+
+            nav a {
+                font-size: 0.9em;
+            }
+
+            section {
+                scroll-margin-top: 96px;
+                padding-top: 18px;
+                margin-bottom: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#publications">Publications</a>
+            <a href="#teaching">Teaching</a>
+            <a href="#people">People</a>
+            <a href="#garalley">Gallery</a>
+        </div>
+        <div class="nav-slogan">Let’s Put More Winds in Our SAILing.</div>
+    </nav>
+
+    <section id="home">
+        <h1>SAIL</h1>
+        <p class="tagline">Scalable Artificial Intelligence Laboratory</p>
+        <p class="sub-text">
+            <b>Yong-Hyuk Moon</b> is an Assistant Professor of Computer Engineering at Sungshin Women's University.
+            Our mission is to push the boundaries of task-agnostic models toward self-evolving AI through research
+            on reasoning trajectories, efficient architectures, model optimization and compression, and on-device adaptation.
+        </p>
+
+        <div style="font-size: 0.95em;">
+            <a href="mailto:yhmoon@sungshin.ac.kr">Email</a> /
+            <a href="https://www.linkedin.com/in/yong-hyuk-moon-45378942/", target="_blank">Linkedin</a> /
+            <a href="#" target="_blank">Google Scholar</a> /
+            <a href="#" target="_blank">CV</a> /
+            <a href="#" target="_blank">GitHub</a>
+        </div>
+
+        <p style="font-size: 0.9em; margin-top: 14px;">
+            <a href="#">&raquo; Before SWU: ETRI and UST</a>
+        </p>
+    </section>
+
+    <section id="activities">
+        <h2>Current Activities</h2>
+
+        <div class="item">
+            <span class="item-title">We are currently building our lab website and look forward to sharing exciting updates soon.</span>
+            <span class="item-meta">April 2026</span>
+            <span class="tag">Update</span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">Two papers have been submitted to ASK 2026 and are currently under review.</span>
+            <span class="item-meta">April 2026</span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">🎉 Excited to share that two papers have been accepted to AVSS 2026.</span>
+            <span class="item-meta">March 2026</span>
+            <span class="tag">Neural Network Rescaling</span>
+            <span class="tag">Memory-Constrained Pruning</span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">Prof. Yong-Hyuk Moon served as a reviewer for NeurIPS 2026.</span>
+            <span class="item-meta">March 2026</span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">Prof. Yong-Hyuk Moon served as a reviewer for BMVC 2026.</span>
+            <span class="item-meta">March 2026</span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">Our joint work with CNU has been accepted for publication in CVIU.</span>
+            <span class="item-meta">March 2026</span>
+            <span class="tag">Computer Vision and Image Understanding</span>
+            <span class="tag">Spatial-Temporal ReID</span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">Prof. Yong-Hyuk Moon served as a reviewer for ECCV 2026.</span>
+            <span class="item-meta">February 2026</span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">Prof. Yong-Hyuk Moon served as a reviewer for CVPR 2026.</span>
+            <span class="item-meta">February 2026</span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">Our joint work with JBNU has been accepted for publication in Applied Sciences.</span>
+            <span class="item-meta">January 2026</span>
+            <span class="tag">Applied Sciences</span>
+            <span class="tag">Efficient AI Systems</span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">Pleased to share that one paper has been accepted for publication in KTSDE.</span>
+            <span class="item-meta">December 2025</span>
+            <span class="tag">Transactions of the Korea Information Processing Society</span>
+            <span class="tag">Channel Pruning</span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">🎉 Our undergraduate student paper won the Bronze Award at ACK 2026.</span>
+            <span class="item-meta">May 2025</span>
+            <span class="tag">Filter Pruning</span>
+            <span class="tag">KIPS</span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">Pleased to share that three papers have been accepted to ACK 2026.</span>
+            <span class="item-meta">April 2025</span>
+            <span class="tag">Augmented Sampling | CNN Pruning | BERT KD</span>
+            <span class="tag">KIPS</span>
+        </div>
+
+        <p style="font-size: 0.9em;">
+            <a href="#">&raquo; View all activities</a>
+        </p>
+    </section>
+
+    <section id="publications">
+        <h2>Publications</h2>
+
+        <p style="font-size: 0.9em; color: #666; margin-top: 0; margin-bottom: 18px;">
+            * Corresponding author
+        </p>
+
+        <div class="item">
+            <span class="item-title">BayPOS: Bayesian Pareto-Optimal Scaling for Sparse Learning</span>
+            <span class="item-meta">
+                <b>Yong-Hyuk Moon</b><br>
+                <i>AVSS 2026 (Accepted)</i>
+                <span class="tag">Model Rescaling</span>
+                [<a href="#">Paper</a>] [<a href="#">Project</a>]
+            </span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">Memory-Constrained Pruning via Hybrid Gradient–Curvature Optimization</span>
+            <span class="item-meta">
+                Hyunsoo Lee, <b>Yong-Hyuk Moon*</b><br>
+                <i>AVSS 2026 (Accepted)</i>
+                <span class="tag">Model Pruning</span>
+                [<a href="#">Paper</a>] [<a href="#">Project</a>]
+            </span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">Object Re-identification via spatial–temporal fusion networks and causal identity matching</span>
+            <span class="item-meta">
+                Hye-Geun Kim, <b>Yong-Hyuk Moon</b>, Yeong-Jun Cho<br>
+                <i>Computer Vision and Image Understanding</i>
+                <span class="tag">Joint Work with CNU</span>
+                <span class="tag">Spatial-Temporal Re-identification</span>
+                [<a href="https://www.sciencedirect.com/science/article/pii/S1077314226001116" target="_blank">Paper</a>]
+                [<a href="#">Project</a>]
+            </span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">A Carbon-Efficient Framework for Deep Learning Workloads on GPU Clusters</span>
+            <span class="item-meta">
+                Dong-Ki Kang, <b>Yong-Hyuk Moon*</b><br>
+                <i>Applied Sciences</i>
+                <span class="tag">Efficient AI Systems</span>
+                [<a href="#">Paper</a>] [<a href="#">Project</a>]
+            </span>
+        </div>
+
+        <p style="font-size: 0.9em;">
+            <a href="#">&raquo; View all publications</a>
+        </p>
+    </section>
+
+    <section id="teaching">
+        <h2>Teaching</h2>
+
+        <div class="item">
+            <span class="item-title">LCOOOO: Algorithm</span>
+            <span class="item-title">LCOOOO: Artificial Intelligence</span>
+            <span class="item-title">LCOOOO: AI Application</span>
+            <span class="item-meta">Spring 2026, Dept. of Computer Engineering</span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">LC0000: Machine Learning</span>
+            <span class="item-title">LC0000: Python Application</span>
+            <span class="item-meta">Fall 2025, Dept. of Computer Engineering</span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">LCOOOO: Algorithm</span>
+            <span class="item-title">LCOOOO: Artificial Intelligence</span>
+            <span class="item-title">LCOOOO: AI Application</span>
+            <span class="item-meta">Spring 2025, Dept. of Computer Engineering</span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">LC0000: Software Engineering</span>
+            <span class="item-title">LC0000: Python Application</span>
+            <span class="item-meta">Fall 2024, Dept. of Computer Engineering</span>
+        </div>
+
+        <div class="item">
+            <span class="item-title">LC0000: Special Lectures in AI</span>
+            <span class="item-meta">Fall 2024, Graduate School</span>
+        </div>
+
+        <p style="font-size: 0.9em;">
+            <a href="#">&raquo; View all lectures</a>
+        </p>
+    </section>
+
+    <section id="people">
+        <h2>People</h2>
+        <div class="people-grid">
+            <div class="person">
+                <span class="person-name">Hyunsoo Lee</span>
+                <span class="person-role">BS/MS Integrated Student</span>
+            </div>
+            <div class="person">
+                <span class="person-name">Seohee Youn</span>
+                <span class="person-role">BS/MS Integrated Student</span>
+            </div>
+            <div class="person">
+                <span class="person-name">Hagyeong Lee</span>
+                <span class="person-role">B.S. Student</span>
+            </div>
+            <div class="person">
+                <span class="person-name">Jiyoun Heo</span>
+                <span class="person-role">B.S. Student</span>
+            </div>
+            <div class="person">
+                <span class="person-name">Haram Kim</span>
+                <span class="person-role">B.S. Student</span>
+            </div>
+            <div class="person">
+                <span class="person-name">Sailor Y</span>
+                <span class="person-role">Ph.D. Student</span>
+            </div>
+            <div class="person">
+                <span class="person-name">Sailor O</span>
+                <span class="person-role">M.S. Student</span>
+            </div>
+            <div class="person">
+                <span class="person-name">Sailor U</span>
+                <span class="person-role">B.S. Student</span>
+            </div>
+        </div>
+        <p style="font-size: 0.9em;">
+            <a href="#">&raquo; View all members</a>
+        </p>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="photo-grid">
+            <div class="photo-card">
+                <img src="images/lab-photo-1.jpg" alt="SAIL lab photo 1">
+                <div class="photo-caption">Lab seminar</div>
+            </div>
+            <div class="photo-card">
+                <img src="images/lab-photo-2.jpg" alt="SAIL lab photo 2">
+                <div class="photo-caption">Conference presentation</div>
+            </div>
+            <div class="photo-card">
+                <img src="images/lab-photo-3.jpg" alt="SAIL lab photo 3">
+                <div class="photo-caption">Group meeting</div>
+            </div>
+        </div>
+        <p style="font-size: 0.9em;">
+            <a href="#">&raquo; Explore all photo</a>
+        </p>
+    </section>
+
+    <footer>
+        &copy; 2026 SAIL. All rights reserved.
+    </footer>
+
+</body>
+</html>
